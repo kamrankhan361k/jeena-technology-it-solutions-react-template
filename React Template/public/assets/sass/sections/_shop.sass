@@ -1,0 +1,191 @@
+/*******************************************************/
+/*********************** ## Shop ***********************/
+/*******************************************************/
+.product-item
+    text-align: center
+    margin-bottom: 55px
+    .image
+        position: relative
+        margin-bottom: 28px
+        .social-style-two
+            +abs-middle()
+            transition: 0.5s
+            opacity: 0
+            margin-top: -20px
+            width: max-content
+            max-width: 100%
+            a
+                color: white
+                background: $secondary-color
+                &:hover
+                    color: $heading-color
+                    background: $primary-color
+    .content
+        h5
+            +res-ab(xs)
+                font-size: 20px
+        .price
+            font-size: 18px
+            font-weight: 500
+            &:before
+                content: '$'
+    &:hover
+        .social-style-two
+            opacity: 1
+            margin-top: 0
+
+.shop-shorter
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    .filter-part
+        display: flex
+        margin-right: auto
+        align-items: center
+        margin-bottom: 15px
+        i
+            font-size: 30px
+            margin-right: 20px
+            color: $secondary-color
+        span
+            @extend %heading
+            font-size: 20px
+    .sort-text
+        font-size: 18px
+        margin-right: 30px
+        margin-bottom: 15px
+    .products-dropdown
+        margin-right: 30px
+        margin-bottom: 15px
+        .nice-select
+            border: none
+            font-size: 16px
+            background: $lighter-color
+            padding: 15px 80px 15px 30px
+    .grid-list
+        display: flex
+        align-items: center
+        margin-bottom: 15px
+        li
+            a
+                font-size: 30px
+                &:hover
+                    color: $secondary-color
+            &:not(:last-child)
+                margin-right: 30px
+            
+/* Product Details */
+.preview-images
+    margin-bottom: 30px
+    img
+        width: 100%
+.thumb-images
+    justify-content: space-between
+    .thumb-item
+        width: calc(33.3333% - 20px)
+        img
+            width: 100%
+
+.product-details-content
+    .section-title
+        h2
+            +res-bt(lg, xl)
+                font-size: 40px
+    .ratting-price
+        display: flex
+        align-items: center
+        .price
+            font-size: 24px
+            font-weight: 500
+            color: $heading-color
+            margin-left: 10px
+            &:before
+                content: '$'
+    .category-tags
+        li
+            &:not(:last-child)
+                margin-bottom: 8px
+            b
+                font-size: 18px
+                color: $heading-color
+            span
+                +gapLR(margin, 20px)
+            a
+                &:not(:last-child)
+                    &:after
+                        content: ','
+                        margin-right: 3px
+    .add-to-cart
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        input
+            width: 88px
+            padding: 8px 20px
+            margin: 10px 10px 0 0
+        .theme-btn
+            +gapTB(padding, 9px)
+            margin: 10px 10px 0 0
+        .wishlist
+            margin-top: 10px
+            padding: 8px 20px
+            border-radius: 5px
+            background: transparent
+            border: 1px solid $border-color
+            
+.product-information-tab
+    li
+        &:not(:last-child)
+            margin-right: 15px
+        a
+            font-size: 18px
+            font-weight: 700
+            padding: 11px 65px
+            border-radius: 5px
+            display: inline-block
+            color: $heading-color
+            border: 1px solid $border-color
+            +res-bl(sm)
+                padding: 6px 30px
+            +res-bl(xs)
+                font-size: 16px
+                padding: 5px 20px
+            &.active
+                color: white
+                background: $secondary-color
+                
+.review-form
+    .ratting
+        b
+            font-size: 20px
+            font-weight: 400
+            margin-right: 20px
+    .form-group
+        margin-bottom: 30px
+        .nice-select,
+        .form-control
+            line-height: 1.4
+            background: $lighter-color
+            border-color: $lighter-color
+            +res-ab(ms)
+                font-size: 18px
+            &::placeholder
+                color: $heading-color
+            &:focus
+                background: transparent
+                border-color: $heading-color
+            .current
+                font-weight: 400
+    .theme-btn
+        +res-ab(md)
+            padding: 14px 55px
+            
+
+.related-product-slider
+    +gapLR(margin, -15px)
+    .product-item
+        +gapLR(margin, 15px)
+        img
+            display: inline-block
+    .slick-dots
+        margin-top: 10px

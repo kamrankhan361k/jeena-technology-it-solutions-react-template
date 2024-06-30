@@ -1,0 +1,28 @@
+/*******************************************************/
+/****************** ## Partners Area ******************/
+/*******************************************************/
+.partner-item
+    height: 85px
+    transition: 0.5s
+    padding: 10px 20px
+    +flexcenter(center)
+    margin-bottom: 30px
+    background: $lighter-color
+    +res-bl(xs)
+        height: 65px
+    &:hover
+        background: white
+        box-shadow: $box-shadow
+        
+.partners-shapes
+    .left-shape
+        +poLT(0)
+        z-index: -2
+    .right-shape
+        +poRB(0)
+        z-index: -2
+        
+/* Partner Two */
+.partner-item-two
+    margin-bottom: 30px
+    display: inline-block

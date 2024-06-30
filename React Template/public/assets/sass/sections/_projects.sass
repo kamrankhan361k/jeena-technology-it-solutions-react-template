@@ -1,0 +1,436 @@
+/*******************************************************/
+/****************** ## Projects Area ******************/
+/*******************************************************/
+.project-slider-item
+    padding: 40px
+    background: white
+    align-items: center
+    box-shadow: $box-shadow
+    +res-ab(xl)
+        display: flex
+    +res-bl(sm)
+        +gapLR(padding, 0)
+    .video,
+    .content
+        opacity: 0
+        transition: 1s
+    .video
+        flex: none
+        margin: 30px 40px
+        +overlay(#15101e, 0.3)
+        transform: translate(50px)
+        +res-bl(xs)
+            +gapLR(margin, 25px)
+        +res-ab(xl)
+            max-width: 46%
+        &:before
+            z-index: 1
+        img
+            width: 100%
+        .video-play
+            z-index: 2
+            +abs-middle()
+    .content
+        padding: 30px 40px
+        transform: translate(-50px)
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        +res-ab(xl)
+            max-width: 45%
+        h4
+            margin-top: -10px
+            margin-bottom: 16px
+            +res-ab(ms)
+                font-size: 24px
+            +res-bl(xs)
+                font-size: 20px
+        .theme-btn
+            margin-top: 30px
+        &:first-child
+            margin-left: auto
+            
+.project-slider-active
+    box-shadow: $box-shadow
+    &:before
+        position: absolute
+        +size(80%, 100%)
+        content: ''
+        left: 10%
+        top: 0
+        z-index: -1
+        background: #f0f0f3
+        transform: rotate(-30deg)
+        animation: semi_rotated_two 20s infinite
+    &:after
+        position: absolute
+        +size(110vw, 50%)
+        content: ''
+        left: 50%
+        bottom: 0
+        z-index: -1
+        transform: translate(-50%)
+        background: $heading-color
+    .project-slider-item
+        +res-ab(xl)
+            display: flex
+        &.slick-active
+            .video,
+            .content
+                opacity: 1
+                transform: translate(0)
+    .slick-arrow
+        top: 50%
+        z-index: 2
+        position: absolute
+        &.prev-arrow
+            left: 0
+            transform: translate(-50%, -50%)
+        &.next-arrow
+            right: 0
+            transform: translate(50%, -50%)
+            
+.project-shapes
+    left: 0
+    top: 0
+    z-index: -1
+    +size(100%, 70%)
+    position: absolute
+    .shape
+        z-index: -1
+        max-width: 35%
+        position: absolute
+        &.one
+            left: 0
+            bottom: 10%
+            animation: down-up-one 10s infinite
+        &.two
+            top: 5%
+            right: 0
+            animation: down-up-one 10s infinite
+            animation-delay: 5s
+            
+/* Project Item */
+.project-item
+    position: relative
+    margin: 0 1px 1px 0
+    .image
+        +overlay(#1b1f2d, 0.7)
+        img
+            width: 100%
+        &:before
+            z-index: 1
+            mix-blend-mode: multiply
+    .content
+        +poLB(0)
+        z-index: 2
+        opacity: 0
+        width: 100%
+        transition: 0.5s
+        padding: 40px 60px
+        transform: translateY(-25px)
+        +res-bl(lb)
+            +gapLR(padding, 28px)
+        .number
+            top: 0
+            left: 50%
+            z-index: -1
+            opacity: 0.15
+            font-size: 250px
+            font-weight: 600
+            position: absolute
+            color: transparent
+            -webkit-text-stroke: 1px
+            text-transform: uppercase
+            font-family: $heading-font
+            transform: translate(-50%, 50%)
+            -webkit-text-stroke-color: white
+            +res-bl(xxl)
+                font-size: 200px
+            +res-bl(md)
+                font-size: 150px
+        h3
+            color: white
+            margin-bottom: 15px
+            +res-ab(xxl)
+                font-size: 35px
+            +res-bl(md)
+                font-size: 28px
+        p
+            color: white
+            line-height: 30px
+            margin-bottom: 25px
+    &:hover
+        .content
+            opacity: 1
+            transform: translateY(0)
+        
+/* Project Item Two */
+.project-item-two
+    position: relative
+    margin-bottom: 30px
+    img
+        width: 100%
+    .content
+        +size(100%)
+        +poLT(0)
+        opacity: 0
+        padding: 25px
+        display: flex
+        transition: 0.5s
+        text-align: center
+        align-items: center
+        flex-direction: column
+        justify-content: center
+        background: transparentize(#23293b, 0.25)
+        .plus
+            opacity: 0
+            color: white
+            font-size: 75px
+            transition: 0.5s
+            margin-bottom: 15px
+            transform: translateY(-25px)
+        h4
+            opacity: 0
+            margin-bottom: 0
+            transition: 0.5s
+            line-height: 1.65
+            transform: translateY(-25px)
+            a
+                color: white
+    &:hover
+        .content
+            opacity: 1
+            .plus, h4
+                opacity: 1
+                transform: translateY(0)
+            .plus
+                transition-delay: 0.2s
+                
+.project-area-three
+    &:after
+        content: ''
+        +poLT(0)
+        z-index: -1
+        +size(100%, 75%)
+        background: $heading-color
+    
+/* Project Item Three */
+.project-three-active
+    +gapLR(margin, -15px)
+    .project-item-three
+        +gapLR(margin, 15px)
+    .slick-arrow
+        position: absolute
+        top: 50%
+        z-index: 3
+        right: 10%
+        transform: translateY(-50%)
+        +res-bl(md)
+            top: 35px
+            right: 20px
+            +size(40px)
+            font-size: 16px
+            line-height: 40px
+        &.prev-arrow
+            left: 10%
+            +res-bl(md)
+                left: 20px
+.project-item-three
+    +overlay($heading-color, 0)
+    &:before
+        z-index: 1
+        transition: 0.5s
+    img
+        +res-bl(md)
+            width: 300px
+    .content
+        position: absolute
+        z-index: 2
+        left: 70px
+        bottom: 50px
+        +res-bl(md)
+            left: 20px
+            bottom: 20px
+        .category
+            color: $heading-color
+            font-weight: 700
+            line-height: 1
+            text-transform: uppercase
+            background-color: $primary-color
+            padding: 8px 15px
+            margin-left: 20px
+            display: inline-block
+            opacity: 0
+            transition: 0.5s
+            +res-bl(md)
+                font-size: 14px
+        h4
+            color: $heading-color
+            background-color: #fff
+            padding: 12px 20px
+            margin-left: 20px
+            opacity: 0
+            transition: 0.5s
+            +res-bl(md)
+                font-size: 18px
+    .detail-btn
+        position: absolute
+        z-index: 2
+        right: 57px
+        bottom: 150px
+        font-size: 45px
+        color: #fff
+        border: 1px solid #fff
+        border-radius: 50%
+        width: 120px
+        height: 120px
+        text-align: center
+        line-height: 120px
+        transform: rotate(135deg)
+        margin-bottom: 40px
+        opacity: 0
+        transition: 0.5s
+        +res-bl(lg)
+            width: 60px
+            right: 30px
+            height: 60px
+            font-size: 25px
+            line-height: 60px
+    &.big-item
+        img
+            +res-bl(md)
+                width: 452px
+    &:hover
+        &:before
+            opacity: 0.65
+        .content
+            .category
+                opacity: 1
+                margin-left: 0
+            h4
+                opacity: 1
+                margin-left: 0
+                transition-delay: .15s
+        .detail-btn
+            opacity: 1
+            margin-bottom: 0
+            
+/* Project Grid */
+.project-grid-item
+    margin-bottom: 60px
+    .image
+        position: relative
+        img
+            width: 100%
+        &:before
+            content: ''
+            z-index: 1
+            opacity: 0
+            +size(100%)
+            +abs-middle()
+            transition: 0.5s
+            mix-blend-mode: multiply
+            background: $heading-color
+        .plus
+            z-index: 2
+            color: white
+            +abs-middle()
+            font-size: 75px
+            +size(100px)
+            &:after,
+            &:before
+                +size(0)
+                content: ''
+                +abs-middle()
+                transition: 0.5s
+                background: white
+    .content
+        padding: 15px 30px
+        position: relative
+        +flexcenter(space-between)
+        box-shadow: 3px 0 60px transparentize(map-get($colors, secondary-color), 0.8)
+        h4
+            margin-bottom: 0
+            +res-bl(lg)
+                font-size: 20px
+        h5
+            margin-bottom: 0
+        .detail-btn
+            flex: none
+            margin-left: 5px
+            color: $heading-color
+            +circle($lighter-color, 45px)
+            +res-bl(xs)
+                display: none
+    &:hover
+        .image
+            &:before
+                opacity: 0.65
+        .plus
+            &:after
+                +size(100%, 2px)
+            &:before
+                +size(2px, 100%)
+            
+.project-active
+    .project-grid-item
+        margin-bottom: 30px
+        .content
+            +res-ab(xs)
+                +gapTB(padding, 8px)
+                
+/* Project Details */
+.project-details-content
+    h4
+        +res-ab(xs)
+            font-size: 24px
+    h3
+        +res-ab(lg)
+            font-size: 35px
+.project-information
+    display: flex
+    flex-wrap: wrap
+    background: white
+    position: relative
+    padding: 35px 15px 2px
+    justify-content: space-around
+    border: 1px solid $border-color
+    &:after
+        content: ''
+        z-index: -1
+        +poLB(10px, -10px)
+        +size(calc(100% - 20px))
+        border: 1px solid $border-color
+    .project-info-item
+        margin-bottom: 30px
+        +gapLR(margin, 15px)
+        
+.next-prev-project
+    .next-prev-item
+        .image
+            max-width: 190px
+            position: relative
+            img
+                max-width: 190px
+            .detail-btn
+                +poLT(0)
+                z-index: 2
+                +size(100%)
+                opacity: 0
+                transition: 0.5s
+                +flexcenter(center)
+                background: rgba(27, 31, 46, 0.5)
+                i
+                    +size(40px)
+                    line-height: 40px
+                    text-align: center
+                    color: $heading-color
+                    background: $primary-color
+        > div
+            &:first-child
+                +res-ab(md)
+                    margin-right: 30px
+        &:hover
+            .image
+                .detail-btn
+                    opacity: 1

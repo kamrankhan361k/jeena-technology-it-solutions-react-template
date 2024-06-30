@@ -1,0 +1,73 @@
+/*******************************************************/
+/***************** ## Features Style ******************/
+/*******************************************************/
+.feature-item
+    transition: 0.5s
+    background: white
+    text-align: center
+    margin-bottom: 30px
+    padding: 30px 15px 25px
+    .icon
+        line-height: 1
+        font-size: 65px
+        transition: 0.5s
+        margin-bottom: 10px
+        color: $secondary-color
+    h5, h4, p
+        transition: 0.5s
+    .more-btn
+        font-size: 18px
+        +size(43px, 40px)
+        line-height: 38px
+        display: inline-block
+        border: 1px solid $border-color
+    &:hover
+        background: $secondary-color
+        .icon, h5, h5 a, h4, p
+            color: white
+        .more-btn
+            color: $secondary-color
+            background: $primary-color
+            border-color: $primary-color
+    &.style-two,
+    &.style-three
+        overflow: hidden
+        position: relative
+        padding: 35px 20px
+        box-shadow: 10px 0 60px transparentize(map-get($colors, secondary-color), 0.9)
+        +res-bl(md)
+            margin-top: 0
+        &:before
+            content: ''
+            +poLT(0)
+            z-index: -1
+            opacity: 0
+            transition: 0.5s
+            +size(195px, 133px)
+            transform: translate(-100%, -100%)
+            background: url(../images/background/feature-bg.png) no-repeat
+        .icon
+            margin-bottom: 20px
+        &:hover
+            h4 a
+                color: white
+            &:before
+                opacity: 1
+                transform: translate(0)
+    &.style-three
+        background: white
+        .bg-image
+            +overlay($secondary-color, 0.85)
+            +size(100%)
+            z-index: -2
+            +poLT(0)
+            opacity: 0
+            transition: 0.5s
+            background-size: cover
+            background-position: center center
+        &:hover
+            .bg-image
+                opacity: 1
+        
+.feature-area-two
+    transform: translateY(-75px)

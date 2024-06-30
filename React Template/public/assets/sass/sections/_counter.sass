@@ -1,0 +1,149 @@
+/*******************************************************/
+/****************** ## Counter Style ******************/
+/*******************************************************/
+.statistics-area,
+.statistics-area-two
+    .container
+        +res-ab(xl)
+            max-width: 1470px
+            
+.statistics-inner
+    margin-top: -140px
+    transform: translateY(140px)
+    +overlay($secondary-color, 0.9)
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    &.style-two
+        margin-top: 0
+        transform: translateY(0)
+        
+.statistics-area-four
+    +overlay($secondary-color, 0.9)
+        
+.statistics-content
+    .read-more
+        font-size: 18px
+            
+.counter-text-wrap
+    .count-text
+        @extend %h2
+        display: block
+        &.plus:after
+                content: '+'
+        &.k-plus:after
+                content: 'k+'
+        &.percent:after
+                content: '%'
+            
+.counter-item
+    margin-bottom: 50px
+    > i
+        font-size: 55px
+        margin-bottom: 25px
+        display: inline-block
+        +circle(white, 100px)
+        color: $secondary-color
+        
+/* Counter Style Two */
+.counter-item-two
+    display: flex
+    margin-right: -1px
+    margin-bottom: -1px
+    padding: 33px 70px 25px
+    border: 1px solid $border-color
+    +res-bl(xxl)
+        +gapLR(padding, 50px)
+    +res-bt(md, lg)
+        +gapLR(padding, 30px)
+    +res-bl(ms)
+        flex-direction: column
+    +res-bl(xs)
+        +gapLR(padding, 40px)
+    .icon
+        line-height: 1
+        font-size: 65px
+        margin-top: 15px
+        margin-right: 20px
+        color: $secondary-color
+    .count-text
+        font-size: 65px
+        font-weight: 500
+        +res-bl(xs)
+            font-size: 50px
+    .counter-title
+        display: block
+        font-size: 18px
+        margin-bottom: 10px
+        color: $heading-color
+        
+/* Counter Style Three */
+.counter-item-three
+    padding: 50px
+    margin-bottom: 28px
+    background: #23293b
+    +res-bl(sm)
+        margin-top: 0
+    > i
+        font-size: 55px
+        margin-bottom: 30px
+        display: inline-block
+        color: $primary-color
+        
+.statistics-two-content
+    +res-ab(xxl)
+        padding-left: 50px
+        
+/* Skill Counter */
+.circle-progress-item
+    margin-bottom: 30px
+    padding: 40px 30px 20px 40px
+    box-shadow: 10px 0 60px rgba(102, 83, 232, 0.15)
+    .progress-content
+        width: max-content
+        position: relative
+        margin-bottom: 20px
+        .h2
+            +abs-middle()
+    h4
+        font-size: 24px
+        margin-bottom: 12px
+        
+.skills-area
+    +overlay($lighter-color, 1)
+    &:before
+        top: -60%
+        height: 120%
+        +res-bl(lg)
+            top: -40%
+        +res-bl(sm)
+            top: -20%
+        
+.skills-bg
+    +poRB(0)
+    z-index: -1
+    +size(46vw, 100%)
+    background-size: cover
+    background-position: center center
+    +res-bl(lg)
+        +size(100%, 70%)
+        
+/* Team Circle Progress */
+.team-circle-progress
+    +res-ab(ms)
+        display: flex
+        align-items: center
+    .circle-progress-counter
+        margin-right: 30px
+        position: relative
+        width: 110px
+        +res-bl(ms)
+            margin-bottom: 10px
+        .h2
+            +abs-middle()
+            font-size: 36px
+            color: $secondary-color
+            span
+                font-size: 16px
+    .content
+        p
+            margin-bottom: 5px

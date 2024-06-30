@@ -1,0 +1,76 @@
+/*******************************************************/
+/****************** ## Team Members *******************/
+/*******************************************************/
+.team-member
+    transition: 0.5s
+    margin-top: 100px
+    text-align: center
+    margin-bottom: 30px
+    padding: 0 35px 40px
+    background: $lighter-color
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    img
+        margin-top: -100px
+        border-radius: 50%
+        margin-bottom: 30px
+    h4
+        margin-bottom: 5px
+    .social-style-two
+        display: flex
+        margin-top: 25px
+        padding-top: 30px
+        justify-content: center
+        border-top: 1px solid $border-color
+    &:not(:hover)
+        .social-style-two
+            a
+                background: white
+    &:hover
+        background: white
+        box-shadow: $box-shadow-light
+    &.style-two
+        background: white
+        box-shadow: $box-shadow-light
+        .social-style-two
+            a
+                &:not(:hover)
+                    background: $lighter-color
+    
+.team-area-two
+    &:before
+        +poLB(0)
+        content: ''
+        z-index: -1
+        +size(100%, 120%)
+        background: $lighter-color
+.team-shapes
+    .shape
+        z-index: -1
+        max-width: 45%
+        &.one
+            +poLB(0, 20%)
+        &.two
+            +poRB(0, 5%)
+            
+/* Team Page */
+.team-page-area
+    .team-shapes
+        .shape.one
+            top: -20%
+        .shape.two
+            top: 70%
+            
+.team-top-video
+    +overlay(#1b1f2d, 0.3)
+    &:before
+        z-index: 0
+    img
+        width: 100%
+    .video-play
+        +abs-middle()
+        background: white
+        color: $secondary-color
+        &:hover
+            color: white
+            background: $secondary-color

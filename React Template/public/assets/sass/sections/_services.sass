@@ -1,0 +1,376 @@
+/*******************************************************/
+/***************** ## Services Area *******************/
+/*******************************************************/
+.service-item
+    transition: 0.5s
+    padding: 40px 35px 15px
+    &.active
+        box-shadow: $box-shadow-light
+    .icon
+        margin-bottom: 25px
+    &.style-two
+        padding-top: 35px
+        background: white
+        margin-bottom: 30px
+        padding-bottom: 28px
+        box-shadow: 10px 0 60px rgba(103, 77, 243, 0.1)
+        .icon
+            line-height: 1
+            font-size: 60px
+            transition: 0.5s
+            margin-bottom: 15px
+            color: $secondary-color
+        &:hover
+            background: $secondary-color
+            h4 a,
+            .icon
+                color: white
+    &.style-three
+        padding: 0
+        margin-bottom: 30px
+        .icon
+            line-height: 1
+            font-size: 85px
+            margin-bottom: 20px
+            color: $secondary-color
+        h4
+            margin-bottom: 15px
+        .read-more
+            color: $heading-color
+        
+/* Service Style Two */
+.service-two-item
+    margin-bottom: 46px
+    +res-ab(xs)
+        display: flex
+    .icon
+        font-size: 55px
+        line-height: 1
+        color: $secondary-color
+        margin: 5px 30px 25px 0
+    .content
+        h4
+            margin-bottom: 15px
+            
+/* Service Style Two */
+.service-item-two
+    padding: 40px
+    background: white
+    margin-bottom: 30px
+    box-shadow: 10px 0 60px rgba(102, 83, 232, 0.1)
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    .image
+        height: 180px
+        position: relative
+        margin-bottom: 40px
+        img
+            +abs-middle()
+            max-width: 100%
+            max-height: 100%
+    .content
+        .title
+            margin-bottom: 18px
+            padding-bottom: 18px
+            border-bottom: 1px solid $border-color
+            
+/* Service Style Three */
+.service-item-three
+    .image
+        +overlay(#21242c, 0)
+        &:before
+            z-index: 2
+            transition: 0.5s
+        img
+            width: 100%
+        .plus
+            z-index: 3
+            opacity: 0
+            color: white
+            +poLT(50%, 20%)
+            font-size: 65px
+            transition: 0.5s
+            transform: translate(-50%)
+    .content
+        z-index: 2
+        position: relative
+        margin: -80px 20px 50px 50px
+        +res-bl(xs)
+            +gapLR(margin, 10px)
+        .top-part
+            transition: 0.5s
+            background: white
+            padding: 40px 50px 30px
+            box-shadow: 10px 0 40px transparentize(map-get($colors, secondary-color), 0.9)
+            +res-bl(ms)
+                +gapLR(padding, 25px)
+            .icon
+                line-height: 1
+                font-size: 65px
+                transition: 0.5s
+                margin-bottom: 5px
+                color: $secondary-color
+            .number
+                +poRT(35px, 30px)
+                opacity: 0.1
+                line-height: 1
+                font-size: 150px
+                font-weight: 600
+                color: transparent
+                -webkit-text-stroke: 1px
+                text-transform: uppercase
+                font-family: $heading-font
+                -webkit-text-stroke-color: $heading-color
+            h4
+                +res-bl(xs)
+                    font-size: 20px
+                    line-height: 1.5
+        .bottom-part
+            opacity: 0
+            transition: 0.5s
+            margin-top: -20px
+            background: white
+            padding: 0 50px 30px
+            transform: translateY(-30px)
+            box-shadow: 10px 40px 40px transparentize(map-get($colors, secondary-color), 0.9)
+            +res-bl(ms)
+                +gapLR(padding, 25px)
+            p, .read-more
+                color: white
+    &:hover,
+    &.active
+        .image
+            &:before
+                opacity: 0.5
+            .plus
+                top: 30%
+                opacity: 1
+        .top-part,
+            background: $secondary-color
+            .icon, h4 a
+                color: white
+            .number
+                -webkit-text-stroke-color: white
+        .bottom-part
+            opacity: 1
+            transform: translateY(0)
+            background: $secondary-color
+    +res-bl(lg)
+        .content
+            .top-part,
+                background: $secondary-color
+                .icon, h4 a
+                    color: white
+                .number
+                    -webkit-text-stroke-color: white
+            .bottom-part
+                opacity: 1
+                transform: translateY(0)
+                background: $secondary-color
+    &.slick-active
+        +res-bl(xs)
+            .image
+                .plus
+                    font-size: 35px
+
+.service-three-slider
+    +gapLR(margin, -15px)
+    .service-item-three
+        +gapLR(margin, 15px)
+    .slick-dots
+        margin-top: 0
+        li
+            background: $secondary-color
+            &.slick-active
+                background: $primary-color
+                border-color: $primary-color
+                outline: 2px solid $primary-color
+                
+/* Service Style Four */
+.service-item-four
+    padding: 40px
+    background: white
+    margin-bottom: 30px
+    box-shadow: 10px 0 60px rgba(102, 83, 232, 0.15)
+    +res-bl(sm)
+        margin-top: 0
+    +res-bl(xs)
+        +gapLR(padding, 35px)
+    .icon
+        +size(93px)
+        line-height: 1
+        font-size: 50px
+        line-height: 93px
+        text-align: center
+        margin-bottom: 30px
+        display: inline-block
+        color: $secondary-color
+        background: url(../images/services/icon-bg.png) no-repeat 100% 100%
+    p
+        margin: 20px 0 5px
+        
+.servcies-bg-shape
+    max-width: 50%
+    z-index: -1
+    +poRT(0, -20%)
+    
+/* Service Style Five */
+.services-five-active
+    +gapLR(margin, -15px)
+    .service-item-five
+        +gapLR(margin, 15px)
+    .slick-dots
+        margin-top: 25px
+        li
+            background: $secondary-color
+            &.slick-active
+                background: $primary-color
+                border-color: $primary-color
+                outline: 2px solid $primary-color
+                
+.service-item-five
+    overflow: hidden
+    position: relative
+    margin-bottom: 30px
+    &:before
+        content: ''
+        +poLT(0)
+        +size(100%)
+        background: linear-gradient(rgba(21,16,30,0.10196) 0%, rgb(27,31,45) 100%)
+    img
+        width: 100%
+    .content
+        z-index: 2
+        +size(100%)
+        display: flex
+        max-width: 400px
+        +poLB(0, -120px)
+        transition: 0.5s
+        justify-content: end
+        flex-direction: column
+        padding: 40px 50px 30px
+        +res-bl(lb)
+            +gapLR(padding, 25px)
+        +res-bl(xs)
+            bottom: 0
+        .icon
+            color: white
+            font-size: 55px
+            line-height: 85px
+            text-align: center
+            +size(100px, 85px)
+            margin-bottom: 20px
+            display: inline-block
+            background: $secondary-color
+        h4
+            font-size: 24px
+            margin-bottom: 15px
+            a
+                color: white
+        p
+            color: white
+            margin-bottom: 10px
+        .read-more
+            color: $primary-color
+        .bottom-part
+            opacity: 0
+            transition: 0.5s
+            +res-bl(xs)
+                display: none
+    .bg-text
+        font-size: 90px
+        font-weight: 600
+        color: transparent
+        -webkit-text-stroke: 1px
+        font-family: $heading-font
+        -webkit-text-stroke-color: white
+        +poLB(50%, 40px)
+        opacity: 0.08
+        line-height: 1
+        transform: translate(-50%)
+        +res-bl(xs)
+            font-size: 60px
+    &:hover
+        .content
+            bottom: 0
+        .bottom-part
+            opacity: 1
+            
+/* Service Style Six */
+.service-item-six
+    transition: 0.5s
+    background: white
+    margin-bottom: 30px
+    padding: 40px 50px 20px
+    background: $lighter-color
+    +res-bl(sm)
+        margin-top: 0
+    +res-bl(xs)
+        +gapLR(padding, 35px)
+    .icon
+        line-height: 1
+        line-height: 1
+        font-size: 50px
+        margin-bottom: 22px
+        display: inline-block
+        color: $secondary-color
+    h4
+        font-size: 24px
+        margin-bottom: 15px
+    &:hover
+        background: white
+        box-shadow: 10px 0 60px rgba(102, 83, 232, 0.15)
+    
+/* Service Details */
+.service-details-content
+    h3
+        font-size: 30px
+        margin-bottom: 20px
+    .image
+        img
+            width: 100%
+            
+/* Next Prev Service */
+.next-prev-service
+    +flexcenter(space-between)
+    +res-bl(xs)
+        flex-wrap: wrap
+    .show-all
+        margin: 0 15px 30px
+        +res-bl(xs)
+            +gapLR(margin, auto)
+    .next-prev-item
+        margin-bottom: 30px
+    .next-prev-item
+        display: flex
+        align-items: center
+        +res-bl(md)
+            flex-wrap: wrap
+        +res-bl(xs)
+            text-align: center
+            justify-content: center
+        > div
+            margin-bottom: 20px
+            &:first-child
+                +res-ab(md)
+                    margin-right: 45px
+        .image
+            max-width: 150px
+            +res-bl(xs)
+                width: 100%
+                max-width: none
+                img
+                    max-width: 150px
+        &:last-child
+            text-align: right
+            justify-content: flex-end
+            +res-bl(xs)
+                text-align: center
+                justify-content: center
+.show-all
+    +size(25px)
+    aspect-ratio: 1
+    display: inline-block
+    --c: conic-gradient(from -90deg, #674df3 90deg, #0000 0)
+    background: var(--c), var(--c);
+    background-size: 40% 40%

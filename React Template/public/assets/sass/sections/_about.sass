@@ -1,0 +1,328 @@
+/*******************************************************/
+/******************* ## About Area ********************/
+/*******************************************************/
+.about-content
+    p
+        max-width: 545px
+.about-btns
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    .theme-btn
+        &:not(:last-child)
+            margin-right: 30px
+.hotline
+    display: flex
+    align-items: center
+    > i
+        +size(55px)
+        line-height: 51px
+        border-radius: 50%
+        text-align: center
+        margin-right: 15px
+        color: $secondary-color
+        border: 2px solid $border-color
+    .content
+        line-height: 1.65
+        span
+            font-weight: 500
+        a
+            font-size: 18px
+            font-weight: 700
+            &:not(:hover)
+                color: $heading-color
+            
+.about-images
+    .top-part,
+    .bottom-part
+        display: flex
+        +gapLR(margin, -15px)
+        align-items: flex-start
+        img
+            +gapLR(margin, 15px)
+    .top-part
+        margin-bottom: 30px
+        img
+            &:first-child
+                max-width: calc(68% - 30px)
+            &:last-child
+                margin-top: 50px
+                margin-left: auto
+                max-width: calc(30% - 30px)
+    .bottom-part
+        img
+            &:first-child
+                width: calc(33% - 30px)
+            &:last-child
+                margin-top: -30%
+                width: calc(67% - 30px)
+            
+/* About Two Image */
+.about-two-image
+    .bg-circle-shape
+        +size(405px)
+        z-index: -1
+        left: -200px
+        bottom: -150px
+        position: absolute
+        border-radius: 50%
+        background: linear-gradient(-90deg, $primary-color, $secondary-color)
+        animation: rotated_circle 10s infinite
+        +res-bl(xxl)
+            +size(200px)
+            left: -100px
+            bottom: -50px
+        &:after
+            content: ''
+            +size(56%)
+            +poRT(22%)
+            background: white
+            border-radius: 50%
+        
+/* Customer Satisfaction */
+.customer-satisfaction-area
+    +overlay($lighter-color, 1)
+    &:before
+        top: -35%
+.cs-image-part
+    position: relative
+    padding-left: 40px
+    +res-ab(lg)
+        margin-left: -15px
+    +res-bl(sm)
+        padding-left: 20px
+    .video-play
+        left: 0
+        position: absolute
+        top: calc(50% - 40px)
+    .image
+        max-width: 75%
+    .experience-years
+        position: absolute
+        right: 0
+        top: 13%
+        max-width: 260px
+        padding: 35px 40px 40px
+        background: $primary-color
+        +res-bl(md)
+            padding: 20px 25px 25px
+        +res-bl(ms)
+            top: 25%
+            max-width: 180px
+            padding-bottom: 5px
+        h4
+            line-height: 1.54
+            margin-bottom: 18px
+            +res-ab(md)
+                font-size: 26px
+            +res-bl(xs)
+                font-size: 18px
+        img
+            border-radius: 50%
+            +res-bl(ms)
+                display: none
+                
+/* Why Choose Us */
+.why-choose-tab
+    .nav
+        .nav-link
+            font-size: 24px
+            border-radius: 0
+            @extend %heading
+            +flexcenter(center)
+            background: transparent
+            border-bottom: 1px solid $border-color
+            +res-ab(xl)
+                padding-bottom: 25px
+            i
+                line-height: 1
+                font-size: 45px
+                margin-right: 15px
+                color: $secondary-color
+            +res-bl(md)
+                font-size: 20px
+                i
+                    font-size: 30px
+            +res-bl(sm)
+                font-size: 16px
+                i
+                    font-size: 20px
+            &.active
+                border-bottom-color: $secondary-color
+
+.why-choose-image
+    position: relative
+    z-index: 1
+    &:before
+        content: ''
+        z-index: -1
+        +poLB(-30px)
+        +size(86px, 186px)
+        background: url(../images/about/why-choose-image-bg-dots.png) no-repeat center/cover
+
+.why-choose-content
+    h3
+        font-size: 30px
+        margin-bottom: 25px
+        +res-bl(sm)
+            font-size: 25px
+    .list-style-one
+        li
+            font-weight: 600
+            &:not(:last-child)
+                margin-bottom: 10px
+            &:before
+                +size(25px)
+                color: white
+                margin-top: 3px
+                line-height: 21px
+                background: $secondary-color
+                border-color: $secondary-color
+            
+.why-choose-shapes
+    .shape
+        z-index: -1
+        max-width: 33%
+        animation: down-up-two 6s infinite
+        &.one
+            +poRT(0)
+        &.two
+            +poLB(0, -10%)
+            animation-delay: 3s
+            
+/* About Three */
+.about-bg-shape
+    position: absolute
+    z-index: -1
+    top: -75px
+    max-width: 50%
+
+/* Consultations */
+.consultations-area
+    &:after
+        content: ''
+        +size(100%, 22%)
+        z-index: -1
+        +poLB(0)
+        background: $heading-color
+.consultations-content
+    .section-title
+        +gapLR(padding, 80px)
+        +res-bl(md)
+            +gapLR(padding, 25px)
+    .consultations-bottom
+        +res-bl(md)
+            +gapLR(padding, 25px)
+        .theme-btn
+            color: $heading-color
+            background: $primary-color
+            i
+                color: $heading-color
+.consultations-video
+    +overlay(#1b1f2e, 0.2)
+    clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%)
+    &:before
+        z-index: 0
+    img
+        width: 100%
+    .video-play
+        +abs-middle()
+        background: white
+        color: $primary-color
+        &:hover
+            color: white
+            background: $primary-color
+        
+/* About Four */
+.about-four-image
+    +res-ab(xxl)
+        margin-right: 60px
+        margin-left: -100px
+    +res-bl(xxl)
+        display: inline-block
+    .about-circle
+        margin-right: 10%
+        position: relative
+        margin-bottom: 20%
+        display: inline-block
+        .text
+            +poLT(7%)
+            width: 86%
+            animation: rotated_circle 30s linear infinite
+    .image
+        +poRB(0)
+        max-width: 60%
+        
+.about-four-content
+    .nav
+        li
+            .nav-link
+                @extend %heading
+                border-radius: 0
+                border-top: 1px solid rgba(27, 31, 45, 0.15)
+                border-bottom: 1px solid rgba(27, 31, 45, 0.15)
+                +res-ab(md)
+                    font-size: 18px
+                    +gapTB(padding, 15px)
+                &.active
+                    color: $secondary-color
+                    background: transparent
+                    border-color: $heading-color
+                &:hover
+                    color: $secondary-color
+    .list-style-one
+        li
+            font-weight: 600
+            &:not(:last-child)
+                margin-bottom: 10px
+            &:before
+                +size(25px)
+                color: white
+                margin-top: 3px
+                line-height: 21px
+                background: $secondary-color
+                border-color: $secondary-color
+            
+/* About Page */
+.about-five-images
+    img
+        width: 60%
+        display: block
+        +res-bl(md)
+            width: 70%
+        +res-bl(xs)
+            width: 80%
+        &:nth-child(2)
+            margin-top: -25%
+            margin-left: auto
+    .experience-years
+        +poRT(13%)
+        max-width: 235px
+        padding: 30px 40px 15px
+        background: $primary-color
+        +res-bl(lg)
+            top: 18%
+        +res-bl(xs)
+            right: 8%
+            max-width: 166px
+            +gapLR(padding, 25px)
+        .years
+            line-height: 1
+            font-size: 75px
+            @extend %heading
+            margin-bottom: 5px
+            display: inline-block
+            +res-bl(xs)
+                font-size: 55px
+        h4
+            line-height: 1.4
+            margin-bottom: 18px
+            +res-ab(md)
+                font-size: 25px
+            +res-bl(xs)
+                font-size: 18px
+    .abut-bg-shape
+        z-index: -1
+        width: 115%
+        +poRT(40px, -55px)
+        max-width: none

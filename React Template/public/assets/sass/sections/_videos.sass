@@ -1,0 +1,61 @@
+/*******************************************************/
+/****************** ## Videos Area ********************/
+/*******************************************************/ 
+/* Video Play */
+.video-play
+    color: white
+    display: inline-block
+    +circle($bgc-gradient, 80px)
+    &:hover
+        color: white
+    +res-bl(sm)
+        +size(60px)
+        font-size: 16px
+        line-height: 60px
+    &.style-two
+        border-radius: 0
+        
+/* Video Play With Text */
+.video-play-text
+    align-items: center
+    display: inline-flex
+    i
+        color: white
+        font-size: 14px
+        margin-right: 15px
+        +circle($secondary-color, 55px)
+    span
+        font-weight: 500
+        color: $heading-color
+        text-decoration: underline
+
+/* Video Area Two */
+.video-area-two
+    &:before
+        content: ''
+        +size(100%, 40%)
+        +poLB(0)
+        z-index: -1
+        background: $lighter-color
+.video-wrap-two
+    +overlay($heading-color, 0.3)
+    &:before
+        z-index: 2
+    .video-play
+        z-index: 3
+        +abs-middle()
+        font-size: 20px
+        +circle(white, 150px)
+        color: $secondary-color
+        +res-bl(lg)
+            +size(100px)
+            line-height: 100px
+        +res-bl(md)
+            +size(70px)
+            font-size: 16px
+            line-height: 70px
+        +res-bl(xs)
+            +size(50px)
+            font-size: 14px
+            line-height: 50px
+    

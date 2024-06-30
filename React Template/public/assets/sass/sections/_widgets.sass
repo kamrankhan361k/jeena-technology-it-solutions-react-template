@@ -1,0 +1,256 @@
+/*******************************************************/
+/***************** ## Sidebar Widgets *****************/
+/*******************************************************/
+.widget
+    &:not(:last-child)
+        margin-bottom: 50px
+        
+.widget-title
+    display: flex
+    align-items: center
+    margin-bottom: 35px
+    padding-bottom: 15px
+    border-bottom: 1px solid $border-color
+    +res-ab(xl)
+        font-size: 24px
+    
+.widget-search
+    .widget-title
+        margin-bottom: 0
+        border-bottom: none
+    form
+        display: flex
+        border-radius: 5px
+        padding: 14px 25px
+        align-items: center
+        background: $lighter-color
+        input
+            padding: 0
+            border: none
+            font-size: 16px
+            background: transparent
+        button
+            flex: none
+            background: transparent
+            
+.widget-category
+    ul
+        li
+            display: flex
+            align-items: center
+            &:not(:last-child)
+                margin-bottom: 15px
+            &:before
+                flex: none
+                content: "\f101"
+                margin-right: 10px
+                font-family: "Font Awesome 5 Pro"
+            a
+                margin-right: auto
+                &:not(:hover)
+                    color: $heading-color
+
+.widget-recent-news
+    ul
+        li
+            display: flex
+            align-items: center
+            padding-bottom: 30px
+            border-bottom: 1px solid $border-color
+            &:not(:last-child)
+                margin-bottom: 30px
+            .image
+                flex: none
+                max-width: 90px
+                margin-right: 30px
+                +res-bl(xs)
+                    max-width: 70px
+                    margin-right: 15px
+            h5
+                margin-bottom: 0
+                line-height: 1.65
+                +res-bt(lg, xl)
+                    font-size: 16px
+                +res-bl(xs)
+                    font-size: 15px
+                    line-height: 1.3
+                    
+.widget-cta
+    z-index: 1
+    overflow: hidden
+    position: relative
+    text-align: center
+    padding: 40px 0 15px
+    background: $secondary-color
+    h4
+        color: white
+        line-height: 1.5
+        margin-bottom: 20px
+        +res-ab(xs)
+            font-size: 27px
+    .theme-btn.style-two
+        border-radius: 5px
+        padding: 7px 25px
+        color: $heading-color
+        &:after
+            background: $primary-color
+    .cta-bg-line
+        position: absolute
+        z-index: -1
+        width: 100%
+        left: 0
+        top: 30%
+        animation: down-up-one 15s infinite
+        
+    .cta-bg-dots
+        position: absolute
+        z-index: -1
+        right: 5%
+        top: 35%
+        max-width: 45%
+        animation: down-up-two 15s infinite
+
+.tag-coulds
+    display: flex
+    flex-wrap: wrap
+    margin: -10px -5px 0
+    a
+        font-size: 14px
+        font-weight: 500
+        padding: 2px 16px
+        margin: 10px 5px 0
+        color: $heading-color
+        text-transform: uppercase
+        background: $lighter-color
+        &:hover
+            background: $primary-color
+        
+/* Service Sidebar */
+.service-sidebar
+    .widget
+        padding: 40px
+        background: $lighter-color
+        +res-bl(xs)
+            +gapLR(padding, 25px)
+        &:not(:last-child)
+            margin-bottom: 30px
+    .widget-title
+        border-bottom: none
+        margin-bottom: 10px
+    .widget-category
+        li
+            &:not(:last-child)
+                margin-bottom: 10px
+            a
+                width: 100%
+                font-weight: 600
+                background: white
+                padding: 11px 30px
+                +flexcenter(space-between)
+                +res-ab(xl)
+                    font-size: 18px
+                &:after
+                    content: "\f101"
+                    font-family: 'Font Awesome 5 Pro'
+                &:hover
+                    color: white
+                    background: $secondary-color
+            &:before
+                display: none
+    .widget-cta
+        +gapTB(padding, 85px)
+        background-size: cover
+        background-position: center
+        +overlay($heading-color, 0.8)
+        &:before
+            mix-blend-mode: multiply
+        .h5
+            color: white
+            margin-bottom: 12px
+            display: inline-block
+        h2
+            color: white
+            line-height: 1
+            font-size: 55px
+            margin-bottom: 45px
+            +res-bl(xl)
+                font-size: 40px
+                margin-top: 10px
+        .theme-btn
+            color: white
+            margin-bottom: 20px
+            border-color: white
+            +gapTB(padding, 10px)
+        .number
+            color: white
+            font-weight: 500
+            i
+                font-size: 22px
+                margin-right: 5px
+                color: $primary-color
+        .bg-shape
+            +poRB(0)
+            z-index: -1
+            max-width: 95%
+    .widget-download
+        li
+            &:not(:last-child)
+                margin-bottom: 10px
+            a
+                font-weight: 600
+                background: white
+                padding: 11px 30px
+                color: $heading-color
+                +flexcenter(space-between)
+                +res-ab(xl)
+                    font-size: 18px
+                i
+                    transition: 0.5s
+                    padding-left: 20px
+                    border-left: 2px solid $border-color
+                &:hover
+                    color: white
+                    background: $secondary-color
+                    i
+                        border-color: white
+                
+/* Shop Sidebar */
+.shop-sidebar
+    .widget-title
+        font-size: 22px
+    .widget-search
+        form
+            background: #f4f2fe
+    .widget-category
+        ul
+            li
+                font-weight: 600
+                font-family: $heading-font
+                span
+                    color: $heading-color
+                &:before
+                    +size(5px)
+                    content: ''
+                    opacity: 0.3
+                    margin-right: 15px
+                    border-radius: 50%
+                    background: $secondary-color
+    .widget-products
+        ul
+            li
+                display: flex
+                align-items: center
+                &:not(:last-child)
+                    margin-bottom: 30px
+                .image
+                    max-width: 110px
+                    margin-right: 22px
+                .content
+                    .ratting
+                        i
+                            color: #ff7800
+                            font-size: 13px
+                    h5
+                        margin-bottom: 5px
+                        +res-bt(lg, xl)
+                            font-size: 16px

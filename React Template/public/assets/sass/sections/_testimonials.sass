@@ -1,0 +1,227 @@
+/*******************************************************/
+/*************** ## Testimonials Area *****************/
+/*******************************************************/
+.testi-image-slider
+    max-width: 400px
+    +gapLR(margin, -3px)
+.testi-image-item
+    margin: 3px
+    position: relative
+    padding-bottom: 70px
+    img
+        +size(75px)
+        cursor: pointer
+        transition: 0.5s
+        border-radius: 50%
+        border: 5px solid transparent
+    &:after
+        position: absolute
+        content: ''
+        right: 10px
+        bottom: -30px
+        transition: 0.5s
+        border-bottom: 15px solid transparent
+        border-right: 22px solid transparent
+    &:before
+        position: absolute
+        left: 0
+        content: ''
+        bottom: 39px
+        +size(80%, 3px)
+        transition: 0.5s
+        background: transparent
+        
+    &.slick-current
+        img
+            border-color: white
+            box-shadow: 0px 0 10px rgba(103, 77, 243, 0.25)
+        &:after
+            bottom: -3px
+            border-bottom-color: $lighter-color
+        &:before
+            background: $primary-color
+                
+.testi-content-slider
+    padding: 30px 40px
+    background: $lighter-color
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    &:before
+        position: absolute
+        +size(100%, 1px)
+        content: ''
+        left: 0
+        top: -44px
+        background: $border-color
+    
+.testi-content-item
+    p
+        line-height: 1.75
+        +res-ab(xs)
+            font-size: 20px
+    .author
+        margin-top: 20px
+        position: relative
+        padding-left: 75px
+        +res-bl(xs)
+            padding-left: 65px
+        .h4
+            display: block
+            margin-bottom: 0
+            +res-bl(ms)
+                font-size: 18px
+        &:before
+            position: absolute
+            content: "\f10e"
+            font-size: 55px
+            left: 1px
+            top: 50%
+            font-weight: 300
+            color: $secondary-color
+            transform: translateY(-50%)
+            font-family: "Font Awesome 5 Pro"
+            +res-bl(xs)
+                font-size: 45px
+        
+.testimonial-right-part
+    position: relative
+    z-index: 1
+    padding-left: 15px
+    padding-right: 20%
+    .testi-image-over
+        position: absolute
+        right: 0
+        bottom: 50%
+        max-width: 260px
+        padding: 35px 35px 40px
+        background: $primary-color
+        transform: translateY(50%)
+        +res-bl(sm)
+            padding: 20px 25px 25px
+            img
+                display: none
+        +res-bl(xs)
+            max-width: 200px
+        h3
+            margin-bottom: 25px
+            letter-spacing: -1px
+            +res-bl(sm)
+                font-size: 25px
+                margin-bottom: 0
+            +res-bl(xs)
+                font-size: 20px
+            
+.dot-shapes
+    img
+        z-index: -1
+        max-width: 40%
+        position: absolute
+        &:first-child
+            top: -40px
+            left: -65px
+            animation: leftRightOne 10s infinite
+        &:last-child
+            right: -30px
+            bottom: 100px
+            animation: upDownLeft 20s infinite
+        
+.testimonial-item
+    padding: 40px 60px 30px
+    background: $lighter-color
+    +res-ab(md)
+        display: flex
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    .image
+        flex: none
+        margin-right: 30px
+        margin-bottom: 25px
+        img
+            +size(88px)
+            @extend %box-shadow
+            border-radius: 50%
+            border: 3px solid white
+    .testi-header
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        margin-bottom: 8px
+        h4
+            margin-right: 15px
+            +res-bl(xs)
+                font-size: 18px
+            &:before
+                content: ',,'
+                line-height: 1
+                font-size: 30px
+                margin-right: 5px
+                display: inline-block
+                transform: rotate(-180deg)
+            &:after
+                content: ',,'
+                line-height: 1
+                font-size: 30px
+                margin-left: 5px
+        .ratting
+            margin-bottom: 10px
+    .testi-footer
+        display: flex
+        margin-top: 15px
+        .icon
+            line-height: 1
+            font-size: 60px
+            margin-right: 20px
+            color: $secondary-color
+            +res-bl(xs)
+                font-size: 40px
+                margin-right: 15px
+        .title
+            h4
+                margin-bottom: 0
+                +res-bl(xs)
+                    font-size: 18px
+    &.style-two
+        padding: 0 0 30px
+        margin-bottom: 45px
+        background: transparent
+        border-bottom: 1px solid $border-color
+    
+.testimonial-slider
+    +gapLR(margin, -15px)
+    .testimonial-item
+        +res-ab(md)
+            display: flex
+        +gapLR(margin, 15px)
+    .slick-list
+        +res-ab(xl)
+            padding-right: 500px
+            margin-right: -500px
+    .slick-dots
+        margin-top: 40px
+        li
+            background: $secondary-color
+            &.slick-active
+                background: $primary-color
+                border-color: $primary-color
+                outline: 2px solid $primary-color
+    
+.testimonial-three-slider
+    .slick-dots
+        margin-top: 50px
+        justify-content: start
+        li
+            background: $secondary-color
+            &.slick-active
+                background: $primary-color
+                border-color: $primary-color
+                outline: 2px solid $primary-color
+                
+.testimonial-four-image
+    background-size: cover
+    background-position: center top
+    +res-ab(lg)
+        +poLT(0)
+        +size(50%, 100%)
+    +res-bl(lg)
+        +size(100%, 500px)
+        

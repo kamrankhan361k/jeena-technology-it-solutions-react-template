@@ -1,0 +1,222 @@
+/*******************************************************/
+/****************** ## Pricing Plan *******************/
+/*******************************************************/
+.pricing-plan-item
+    background: white
+    position: relative
+    padding: 45px 50px
+    margin-bottom: 30px
+    box-shadow: $box-shadow
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+    .badge
+        position: absolute
+        top: 0
+        opacity: 0
+        right: 20px
+        font-size: 18px
+        font-weight: 500
+        transition: 0.5s
+        padding: 8px 20px
+        visibility: hidden
+        background: orange
+    .title
+        font-size: 20px
+        margin-bottom: 0
+        letter-spacing: 1px
+        text-transform: uppercase
+    .price-count
+        display: block
+        margin-bottom: 8px
+        color: $secondary-color
+    .price
+        @extend %h2
+        +res-bl(lg)
+            font-size: 40px
+        +res-bl(xs)
+            font-size: 35px
+        &:before
+            content: '$'
+        &:after
+            font-size: 16px
+            font-weight: 500
+            color: $base-color
+            content: '/Per month'
+    .theme-btn
+        width: 100%
+        margin-top: 25px
+        margin-bottom: 35px
+    h5
+        margin-bottom: 20px
+        display: inline-block
+        border-bottom: 1px solid
+    ul
+        li
+            display: flex
+            line-height: 1.5
+            +res-ab(xxl)
+                font-size: 18px
+            &:not(:last-child)
+                margin-bottom: 15px
+            &:before
+                content: "\f0da"
+                font-weight: 300
+                margin-right: 10px
+                font-family: 'Font Awesome 5 Pro'
+            a
+                &:hover
+                    color: $secondary-color
+                    text-decoration: underline
+    &:hover
+        .badge
+            opacity: 1
+            visibility: visible
+            transform: translateY(-50%)
+    &.style-two
+        padding: 30px 44px 0
+        margin-bottom: 65px
+        &:before
+            content: ''
+            +poLT(0)
+            z-index: -1
+            +size(155px, 235px)
+            background: url(../images/background/pricing-bg.png) no-repeat center/cover
+        .title
+            text-align: center
+        .price-count
+            text-align: center
+        .icon
+            line-height: 1
+            font-size: 96px
+            text-align: center
+            color: $secondary-color
+            margin: 25px 0 15px
+            +res-bl(xxl)
+                font-size: 65px
+        .price
+            margin-top: 22px
+            display: inline-block
+            +res-bl(xxl)
+                font-size: 30px
+        .theme-btn
+            margin-top: 5px
+            margin-bottom: 0
+            transform: translateY(25px)
+    &.style-three
+        .theme-btn
+            margin-bottom: 0
+        .price
+            display: block
+            +gapTB(margin, 25px)
+            color: $secondary-color
+            
+.price-shapes
+    .shape
+        z-index: -1
+        position: absolute
+        &.one
+            left: 0
+            bottom: 7%
+            max-width: 35%
+        &.two
+            top: 0
+            right: 0
+            max-width: 70%
+            animation: down-up-one 5s infinite
+            
+.pricing-wrapper
+    position: relative
+    &:after
+        content: ''
+        z-index: -1
+        +poLB(-80px, -40px)
+        +size(calc(100% + 160px), 90%)
+        background: $lighter-color
+        
+/* Pricing Page */
+.price-plan-page-bottom
+    .pricing-plan-item
+        +res-ab(ms)
+            +gapLR(padding, 40px)
+        .price
+            display: block
+            +res-bt(xl, xxl)
+                font-size: 33px
+        .theme-btn
+            width: auto
+            +gapTB(padding, 9px)
+            +res-bt(xl, xxl)
+                font-size: 14px
+                +gapLR(padding, 28px)
+                
+.price-page-shapes
+    .shape
+        z-index: -1
+        position: absolute
+        &.one
+            left: 0
+            bottom: 0
+            max-width: 70%
+            animation: leftRightOne 5s 3s infinite
+        &.two
+            bottom: 8%
+            right: 0
+            max-width: 50%
+            animation: leftRightOne 5s infinite
+                
+/* Pricing Tab */
+.pricing-tab-wrap
+    +res-bl(xl)
+        margin-top: 0
+        margin-bottom: 55px
+
+.pricing-tab
+    padding: 15px 35px
+    display: inline-flex
+    background: $secondary-color
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    li
+        &:first-child button:after,
+        &:last-child button:before
+            content: ''
+            +size(22px)
+            transition: 0.5s
+            background: white
+            border-radius: 50%
+        &:first-child button:after
+            margin-left: 20px
+            margin-right: 4px
+        &:last-child button:before
+            margin-right: 20px
+            margin-left: 4px
+        &:first-child button:before
+            position: absolute
+            +size(50px, 22px)
+            content: ''
+            top: 50%
+            right: 0
+            z-index: -1
+            background: white
+            border-radius: 10px
+            transform: translate(50%, -50%)
+        button
+            padding: 0
+            z-index: 1
+            display: flex
+            color: #fefeff
+            font-size: 16px
+            font-weight: 700
+            align-items: center
+            position: relative
+            background: transparent
+            +res-bl(xs)
+                font-size: 14px
+            i
+                margin-left: 10px
+            &:focus,
+            &:hover
+                color: #fefeff
+        &:first-child button.active:after,
+        &:last-child button.active:before
+            background: $primary-color

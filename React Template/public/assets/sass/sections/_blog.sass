@@ -1,0 +1,395 @@
+/*******************************************************/
+/******************** ## Blog Area ********************/
+/*******************************************************/
+.blog-meta
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 5px
+    align-items: center
+    li
+        display: flex
+        line-height: 1.5
+        margin-bottom: 10px
+        align-items: center
+        i
+            margin: -3px 8px 0 0
+        &:not(:last-child)
+            &:after
+                content: ''
+                +size(5px)
+                border-radius: 50%
+                +gapLR(margin, 22px)
+                background: $base-color
+        
+.blog-meta-two
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    font-family: $heading-font
+    .tag
+        font-weight: 600
+        padding: 1px 15px
+        border-radius: 5px
+        text-transform: uppercase
+        border: 1px solid $border-color
+        &:hover
+            color: $heading-color
+            background: $primary-color
+            border-color: $primary-color
+    .author
+        font-weight: 600
+        color: $secondary-color
+        text-transform: uppercase
+    a
+        margin-bottom: 10px
+        i
+            margin-right: 5px
+        &:not(:last-child)
+            margin-right: 40px
+            +res-bl(md)
+                margin-right: 15px
+        
+.blog-item
+    margin-bottom: 30px
+    .image
+        img
+            width: 100%
+    .content
+        @extend %box-shadow
+        padding: 33px 40px 30px
+        +res-bl(ms)
+            +gapLR(padding, 25px)
+        .blog-meta
+            li
+                &:after
+                    transition: 0.5s
+                    background: $base-color
+                    +res-bl(ms)
+                        +gapLR(margin, 10px)
+        h4
+            margin-bottom: 15px
+            letter-spacing: -1px
+            +res-bl(xs)
+                font-size: 20px
+            +res-ab(lg)
+                font-size: 24px
+        .author
+            margin-bottom: 20px
+            img
+                +size(40px)
+                border-radius: 50%
+            i
+                margin-left: 10px
+                margin-right: 5px
+            a
+                font-weight: 500
+                color: $secondary-color
+        .author-more
+            margin-top: 30px
+            padding-top: 10px
+            +flexcenter(space-between)
+            border-top: 1px solid $border-color
+            .author,
+            .read-more
+                margin-top: 15px
+                margin-bottom: 0
+    
+    &.style-two
+        .content
+            padding-top: 0
+        .blog-meta
+            color: white
+            transition: 0.5s
+            position: relative
+            border-radius: 5px
+            padding: 10px 25px 0
+            margin: -25px -15px 33px
+            background: $secondary-color
+            li
+                a
+                    color: white
+                &:after
+                    transition: 0.5s
+                    background: white
+                    +res-bl(ms)
+                        +gapLR(margin, 10px)
+        &:hover
+            .blog-meta
+                color: $heading-color
+                background: $primary-color
+                li
+                    a
+                        color: $heading-color
+                    &:after
+                        background: $heading-color
+                    
+    &.style-three
+        margin-bottom: 60px
+        .image, .content
+            width: 410px
+            max-width: 95%
+        .content
+            margin-top: -25%
+            margin-left: auto
+            background: white
+            position: relative
+    &.style-four
+        transition: 0.5s
+        background: white
+        padding: 40px 50px
+        border: 1px solid $border-color
+        +res-ab(md)
+            display: flex
+            align-items: center
+        +res-bl(ms)
+            +gapLR(padding, 25px)
+        .image
+            flex: none
+            max-width: 250px
+            margin-right: 50px
+            +res-bt(md, lg)
+                margin-right: 40px
+            +res-bl(md)
+                margin: 0 0 30px
+        .content
+            padding: 0
+            width: 100%
+            box-shadow: none
+            h4
+                a
+                    &:hover
+                        color: $heading-color
+                        text-decoration: underline
+            .blog-meta
+                +res-bl(xs)
+                    font-size: 15px
+                    i
+                        display: none
+            .author-more
+                justify-content: flex-start
+                +res-bl(xs)
+                    font-size: 15px
+                .author
+                    display: flex
+                    align-items: center
+                    &:after
+                        +size(5px)
+                        content: ''
+                        border-radius: 50%
+                        +gapLR(margin, 40px)
+                        background: $secondary-color
+                        +res-bl(xs)
+                            +gapLR(margin, 10px)
+        &:hover
+            border-color: white
+            box-shadow: 10px 0 60px transparentize(map-get($colors, secondary-color), 0.9)
+        
+/* Blog Standard */
+.blog-standard-item
+    margin-bottom: 50px
+    +res-ab(xl)
+        display: flex
+        align-items: center
+    .image
+        margin-bottom: 30px
+        +res-ab(xl)
+            width: 48%
+            flex: none
+            margin-bottom: 0
+            margin-right: 50px
+    .content
+        h4
+            line-height: 1.48
+            margin-bottom: 18px
+            +res-ab(xs)
+                font-size: 24px
+        p
+            margin-bottom: 20px
+        
+/* Blog Details */
+.blog-details-content
+    h3
+        line-height: 1.4
+        +res-bl(sm)
+            font-size: 28px
+        +res-bl(ms)
+            font-size: 25px
+    > h4
+        margin-bottom: 15px
+        +res-ab(xs)
+            font-size: 24px
+    p
+        margin-bottom: 15px
+.tag-share
+    flex-wrap: wrap
+    +flexcenter(space-between)
+    .item
+        display: flex
+        align-items: center
+        margin-bottom: 25px
+        h5
+            margin: 0 20px 0 0
+        .tag-coulds
+            a
+                +gapTB(padding, 0)
+                border-radius: 5px
+                text-transform: capitalize
+                
+blockquote
+    display: flex
+    padding: 33px 50px 30px
+    border: 1px solid $border-color
+    +res-bl(sm)
+        +gapLR(padding, 25px)
+    +res-bl(xs)
+        +gapLR(padding, 15px)
+    &:before
+        content: ""
+        line-height: 1
+        font-size: 45px
+        margin-right: 25px
+        font-family: "Flaticon"
+        color: $secondary-color
+        +res-bl(ms)
+            font-size: 35px
+            margin-right: 15px
+    h4
+        +res-bl(sm)
+            font-size: 18px
+        +res-bl(xs)
+            font-size: 16px
+    .name
+        display: flex
+        align-items: center
+        +res-bl(xs)
+            font-size: 14px
+        &:before
+            content: ''
+            +size(40px, 3px)
+            margin-right: 20px
+            background: $primary-color
+            +res-bl(xs)
+                width: 20px
+                margin-right: 15px
+
+
+/* Comments */
+.comment-title
+    +res-ab(xs)
+        font-size: 24px
+.comment-body
+    padding-top: 40px
+    padding-bottom: 15px
+    border-bottom: 1px solid $border-color
+    &:first-child
+        border-top: 1px solid $border-color
+    +res-ab(ms)
+        display: flex
+    .author-thumb
+        flex: none
+        max-width: 85px
+        margin-right: 30px
+        margin-bottom: 15px
+        img
+            border-radius: 50%
+    .content
+        h5
+            margin-bottom: 0
+            +flexcenter(space-between)
+            .theme-btn
+                font-size: 16px
+                border-radius: 5px
+                padding: 10px 18px
+                font-family: $heading-font
+        .date
+            display: block
+            margin: -2px 0 8px
+            
+.admin-comment
+    .comment-body
+        border: none
+        padding: 35px 40px
+        align-items: center
+        background: $lighter-color
+        +res-bl(sm)
+            display: block
+            +gapLR(padding, 25px)
+        .author-thumb
+            max-width: 140px
+            +res-ab(sm)
+                margin-bottom: 0
+                
+/* Next Prev Post */
+.next-prev-post
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    .post-item
+        display: flex
+        max-width: 340px
+        align-items: center
+        margin-bottom: 20px
+        .image
+            flex: none
+            max-width: 90px
+            margin-right: 30px
+        h5
+            line-height: 1.65
+            margin-bottom: 5px
+            a
+                color: $heading-color
+                &:hover
+                    text-decoration: underline
+        .date
+            i
+                margin-right: 5px
+                
+                
+/* Comment Form */
+.comment-form
+    padding: 50px 50px 60px
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    h4
+        +res-ab(xs)
+            font-size: 24px
+    .form-group
+        label
+            position: absolute
+            top: 0
+            right: 0
+    .form-control
+        font-size: 18px
+        border-radius: 0
+        padding: 15px 0 12px
+        border-width: 0 0 1px
+        background-color: transparent
+        border-color: $border-color
+        &::placeholder
+            color: $heading-color
+    .form-check
+        display: flex
+        margin-bottom: 30px
+        .form-check-input[type=radio]
+            +size(24px)
+            padding: 0
+            flex: none
+            cursor: pointer
+            box-shadow: none
+            position: relative
+            margin-right: 20px
+            border-radius: 5px
+            background: transparent
+            border: 2px solid rgba(32, 78, 207, 0.2)
+            &:after
+                content: ''
+                +size(7px)
+                +abs-middle()
+                border-radius: 50%
+                background: $border-color
+            &:checked
+                &:after
+                    background: $secondary-color
+        label
+            font-weight: 400
+            position: relative

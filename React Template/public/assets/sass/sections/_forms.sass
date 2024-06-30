@@ -1,0 +1,112 @@
+/*******************************************************/
+/****************** ## Contact Forms ******************/
+/*******************************************************/
+.form-style-one
+    .form-group
+        margin-bottom: 25px
+    .form-control
+        font-size: 18px
+        font-weight: 500
+        border-radius: 0
+        padding: 10px 0 15px
+        border-width: 0 0 1px
+        &:focus
+            border-color: $heading-color
+        
+.form-style-two
+    .form-group
+        margin-bottom: 30px
+    .form-control
+        border: none
+        font-size: 18px
+        border-radius: 0
+        font-weight: 500
+        +res-ab(sm)
+            padding: 22px 35px
+        
+.contact-form
+    box-shadow: 10px 0 60px rgba(102, 83, 232, 0.1)
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+.contact-info-part
+    max-width: 415px
+    padding: 40px 60px
+    background: transparentize(map-get($colors, secondary-color), 0.93)
+    +res-bl(ms)
+        +gapLR(padding, 25px)
+        
+.contact-info-item
+    display: flex
+    align-items: center
+    .icon
+        flex: none
+        color: white
+        font-size: 22px
+        margin-right: 20px
+        +circle($secondary-color, 50px)
+    h5
+        margin-bottom: 0
+        +res-bl(xs)
+            font-size: 16px
+    &:not(:last-child)
+        margin-bottom: 20px
+    
+/* Contact Info Box */
+.contact-info-box
+    transition: 0.5s
+    background: white
+    margin-bottom: 30px
+    padding: 50px 40px 45px
+    border: 1px solid $border-color
+    +res-ab(xs)
+        font-size: 18px
+    .icon
+        font-size: 55px
+        margin-bottom: 30px
+        color: $secondary-color
+        +res-bl(xs)
+            font-size: 40px
+    h4
+        margin-bottom: 15px
+        +res-ab(xs)
+            font-size: 24px
+    > a,
+    > span
+        display: inline-block
+    > b
+        font-weight: 500
+        color: $secondary-color
+    &:hover
+        border-color: white
+        box-shadow: $box-shadow
+    
+/* Location Map */
+.our-location
+    iframe
+        height: 750px
+        +res-bl(xxl)
+            height: 600px
+        +res-bl(lg)
+            height: 500px
+        +res-bl(sm)
+            height: 400px
+        
+/* Contact Page Form */
+.contact-form-wrap
+    margin-top: -165px
+    padding: 130px 110px
+    +res-bl(lg)
+        margin-top: -100px
+        padding: 100px 50px
+    +res-bl(ms)
+        padding: 60px 25px
+        
+/* Contact Form Validation */
+.has-error
+    .with-errors
+        color: red
+        margin-top: 5px
+        margin-bottom: -15px
+#msgSubmit
+    margin-bottom: 0
+    margin-top: 10px

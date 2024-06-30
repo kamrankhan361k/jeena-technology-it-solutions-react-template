@@ -1,0 +1,91 @@
+/*******************************************************/
+/******************* ## FAQs Area *********************/
+/*******************************************************/
+.accordion-item
+    z-index: 1
+    border: none
+    padding: 20px 25px
+    position: relative
+    border-radius: 0 !important
+    box-shadow: 10px 0 60px rgba(102, 83, 232, 0.15)
+    +res-bl(xs)
+        +gapLR(padding, 20px)
+    &:not(:last-child)
+        margin-bottom: 15px
+    .accordion-button
+        padding: 0
+        box-shadow: none
+        font-weight: 700
+        position: inherit
+        color: $heading-color
+        background: transparent
+        +res-ab(xs)
+            font-size: 18px
+        &:focus
+            box-shadow: none
+    .accordion-body
+        padding: 0
+        p
+            margin: 10px 0 0
+            
+.style-two
+    .accordion-item
+        z-index: 1
+        box-shadow: none
+        position: relative
+        background: transparent
+    .accordion-button
+        &:after
+            content: '\f06e'
+            font-weight: 400
+            background-image: none
+            color: $secondary-color
+            font-family: 'Font Awesome 5 Pro'
+        &:before
+            content: ''
+            +poLT(0)
+            z-index: -1
+            +size(100%)
+            transition: 0.5s
+            border: 1px solid transparent
+            box-shadow: $box-shadow-light
+        &.collapsed
+            &:before
+                border-color: $border-color
+            &:after
+                content: '\f070'
+                color: $heading-color
+            
+.style-three
+    .accordion-button
+        align-items: flex-start
+        +res-bl(md)
+            font-size: 16px
+        &:after
+            content: '\f06e'
+            font-weight: 400
+            background-image: none
+            color: $secondary-color
+            font-family: 'Font Awesome 5 Pro'
+        &.collapsed
+            &:after
+                content: '\f070'
+                color: $heading-color
+
+/* Team Page */
+.faq-images
+    position: relative
+    padding-left: 100px
+    +res-bl(ms)
+        padding-left: 50px
+    .logo
+        +poLT(0, 50%)
+        padding: 40px 45px
+        transform: translateY(-50%)
+        background: $secondary-color
+        clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%)
+        +res-bl(ms)
+            max-width: 150px
+            padding: 20px 25px
+        +res-bl(xs)
+            max-width: 100px

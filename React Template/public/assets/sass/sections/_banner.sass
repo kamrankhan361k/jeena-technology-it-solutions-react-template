@@ -1,0 +1,44 @@
+/*******************************************************/
+/******************* ## Page Banner *******************/
+/*******************************************************/
+.page-banner-area
+    +overlay($heading-color, 0.75)
+    &:before
+        mix-blend-mode: multiply
+.banner-inner
+    h1
+        font-size: 75px
+        margin-bottom: 20px
+        text-transform: capitalize
+        +res-bl(lg)
+            font-size: 60px
+        +res-bl(md)
+            font-size: 55px
+        +res-bl(sm)
+            font-size: 45px
+        +res-bl(xs)
+            font-size: 35px
+            line-height: 1.25
+.breadcrumb
+    padding: 0
+    margin: 0
+    font-size: 22px
+    background: transparent
+    text-transform: capitalize
+    +res-bl(xs)
+        font-size: 18px
+    .breadcrumb-item
+        padding: 0
+        +flexcenter(center)
+        &.active
+            color: white
+            text-decoration: underline
+            text-underline-offset: 2px
+            text-decoration-thickness: 1px
+        &+.breadcrumb-item::before
+            +gapLR(margin, 15px)
+            flex: none
+            color: white
+            content: "\f105"
+            font-family: "Font Awesome 5 Pro"
+            

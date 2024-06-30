@@ -1,0 +1,152 @@
+/*******************************************************/
+/******************** ## Hero Area ********************/
+/*******************************************************/
+.hero-content
+    z-index: 2
+    max-width: 530px
+    position: relative
+    .sub-title
+        font-weight: 500
+        line-height: 1.5
+        padding: 8px 20px
+        display: inline-block
+        border-radius: 0 5px 5px 0
+        background: $primary-color
+        border-left: 3px solid white
+        +res-ab(md)
+            font-size: 18px
+    h1
+        color: white
+        font-size: 65px
+        +res-bl(xl)
+            font-size: 55px
+        +res-bl(md)
+            font-size: 45px
+        +res-bl(sm)
+            font-size: 40px
+        +res-bl(xs)
+            font-size: 33px
+            line-height: 1.3
+    p
+        color: white
+        margin-top: 22px
+        +res-ab(xl)
+            font-size: 18px
+        
+.hero-images
+    z-index: 1
+    position: relative
+    margin-bottom: -80px
+    +res-ab(xxl)
+        margin-left: -8%
+        margin-right: -25%
+    img
+        clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%)
+    
+.hero-shapes
+    .shape
+        z-index: -1
+        position: absolute
+        &.bg-lines
+            left: -25px
+            top: -50px
+            max-width: 55%
+            animation: down-up-two 10s infinite
+        &.right-shape
+            right: 0
+            z-index: 2
+            bottom: -5%
+            max-width: 30%
+        &.one
+            left: -10%
+            bottom: 0
+            animation: leftRightOne 15s infinite
+        &.two
+            top: 0
+            right: 0
+            animation: down-up-two 8s infinite
+        &.three
+            right: 0
+            bottom: 5%
+            animation: shapeAnimationFour 20s infinite
+            
+/* Hero Two */
+.hero-area-two
+    overflow: hidden
+    +overlay(#1b1f2d, 0.75)
+    .hero-shapes-two
+        +poLT(0)
+        z-index: -1
+        max-width: 30%
+        animation: down-up-two 10s infinite
+.hero-content-two
+    .sub-title
+        color: white
+        display: flex
+        font-weight: 500
+        align-items: center
+        margin-bottom: 20px
+        +res-ab(sm)
+            font-size: 22px
+        &:before
+            content: ''
+            +size(60px, 2px)
+            margin-right: 20px
+            background: white
+            +res-bl(xs)
+                +size(40px, 1px)
+    h1
+        color: white
+        +res-bl(xxl)
+            font-size: 65px
+        +res-bl(xl)
+            font-size: 55px
+            line-height: 1.3
+        +res-bl(md)
+            font-size: 45px
+        +res-bl(sm)
+            font-size: 38px
+            letter-spacing: -1px
+        +res-bl(xs)
+            font-size: 30px
+        
+.hero-gradient-circle
+    position: relative
+    padding-bottom: 100%
+    +res-bl(lg)
+        width: 200px
+        top: 22%
+        right: 5%
+        z-index: -1
+        position: absolute
+        padding-bottom: 200px
+    +res-bt(ms, md)
+        top: 15%
+    +res-bl(ms)
+        width: 150px
+        padding-bottom: 150px
+    +res-bl(xs)
+        top: 15%
+    .icon
+        z-index: 2
+        position: absolute
+        +poLT(calc(50% - 50px))
+        +poRB(calc(50% - 50px))
+        animation: rotated_circle 10s infinite
+        +res-bl(lg)
+            +poLT(calc(50% - 25px))
+            +poRB(calc(50% - 25px))
+    &:before
+        content: ''
+        +size(100%)
+        +poLT(0)
+        opacity: 0.75
+        border-radius: 50%
+        background: linear-gradient(-90deg, $primary-color, $secondary-color)
+        animation: rotated_circle 10s infinite
+    &:after
+        content: ''
+        +size(56%)
+        +poRT(22%)
+        background: white
+        border-radius: 50%

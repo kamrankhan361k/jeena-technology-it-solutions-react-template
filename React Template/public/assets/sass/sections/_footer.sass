@@ -1,0 +1,128 @@
+/*******************************************************/
+/******************* ## Main Footer *******************/
+/*******************************************************/
+.footer-cta-wrap
+    .container
+        +res-ab(xl)
+            max-width: 1470px
+            
+.footer-cta-inner
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    padding: 60px 80px 35px
+    transform: translateY(-80px)
+    +overlay($primary-color, 0.9)
+    +res-bl(md)
+        +gapLR(padding, 35px)
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    .section-title
+        margin-bottom: 25px
+        margin-right: auto
+        .sub-title
+            margin-bottom: 8px
+            color: $heading-color
+            +res-bl(xs)
+                font-size: 18px
+        h2
+            margin-bottom: 0
+            letter-spacing: -1px
+    .theme-btn
+        margin-bottom: 25px
+        margin-right: 30px
+    .hotline
+        margin-bottom: 25px
+        > i
+            background: white
+            border-color: white
+        .content
+            span, a
+                color: $heading-color
+        
+.footer-logo
+    padding: 25px 30px
+    display: inline-block
+    background: $secondary-color
+    clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%)
+    
+.footer-white
+    color: #b6bace
+    a
+        &:not(:hover)
+            color: #b6bace
+    .read-more
+        color: $primary-color
+    h5,
+    .footer-title,
+    .footer-bottom-menu li a:hover
+        color: white
+    .widget_newsletter
+        form
+            border-color: rgba(255, 255, 255, 0.3)
+            
+.footer-widget
+    margin-bottom: 50px
+.footer-title
+    margin-bottom: 28px
+    +res-ab(xs)
+        font-size: 24px
+        
+.widget_newsletter
+    form
+        display: flex
+        align-items: center
+        margin-bottom: 30px
+        padding-bottom: 12px
+        border-bottom: 2px solid $border-color
+        label
+            margin: 5px 6px 0 0
+            color: $primary-color
+        input
+            padding: 0
+            border: none
+            max-width: 150px
+            margin-right: auto
+            background: transparent
+        button
+            color: white
+            line-height: 1.5
+            font-weight: 500
+            padding: 5px 12px
+            background: $secondary-color
+    .social-style-one
+        a
+            margin-right: 15px
+        
+/* Footer Bottom */
+.footer-bottom-menu
+    ul
+        flex-wrap: wrap
+        display: inline-flex
+        margin-right: -10px
+        li
+            margin: 0 10px 5px 0
+            a
+                color: $heading-color
+                &:hover
+                    text-decoration: underline
+            &:not(:last-child)
+                &:after
+                    content: '|'
+                    margin-left: 10px
+                
+.footer-shapes
+    .shape
+        position: absolute
+        z-index: -2
+        max-width: 50%
+        &.one
+            left: 0
+            bottom: 0
+        &.two
+            right: 0
+            bottom: 0
+        &.three
+            right: 0
+            bottom: 10%
+            z-index: -1

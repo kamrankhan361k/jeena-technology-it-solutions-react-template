@@ -1,0 +1,512 @@
+/*******************************************************/
+/******************* ## Header style ******************/
+/*******************************************************/
+.main-header
+    position: relative
+    left: 0px
+    top: 0px
+    z-index: 999
+    width: 100%
+    transition: all 500ms ease
+    .header-upper
+        z-index: 5
+        width: 100%
+        position: relative
+        transition: all 500ms ease
+    .logo-outer
+        flex: none
+        +res-bl(lg)
+            display: none
+    .logo
+        z-index: 9
+        padding: 2px 0
+        position: relative
+    &.menu-absolute
+        .header-upper
+            position: absolute
+    &.fixed-header
+        .header-upper
+            top: 0
+            left: 0
+            position: fixed
+            animation: sticky  1s
+            box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, .10)
+        .main-menu
+            .navbar-collapse
+                > ul
+                    > li
+                        +res-ab(lg)
+                            +gapTB(padding, 25px)
+
+.header-top-wrap
+    +res-bl(md)
+        display: none
+.header-top
+    > ul
+        +flexcenter(center)
+        > li
+            display: flex
+            align-items: center
+            &:not(:last-child)
+                &:after
+                    +size(5px)
+                    content: ''
+                    border-radius: 50%
+                    +gapLR(margin, 30px)
+                    background: $base-color
+            > i
+                margin-right: 10px
+                color: $primary-color
+    .text
+        color: white
+        font-weight: 500
+        text-align: center
+        +gapTB(padding, 8px)
+        .hello
+            padding: 4px 7px
+            font-size: 14px
+            font-weight: 700
+            background: white
+            margin-right: 5px
+            border-radius: 3px
+            position: relative
+            color: $secondary-color
+            &:after
+                content: ''
+                position: absolute
+                top: 100%
+                left: 6px
+                border-top: 5px solid white
+                border-left: 6px solid transparent
+                border-right: 6px solid transparent
+        a
+            text-decoration: underline
+            &:not(:hover)
+                color: white
+    
+.nav-outer
+    +res-bl(lg)
+        width: 100%
+ 
+/** Header Main Menu **/
+.main-menu
+    +res-bl(lg)
+        width: 100%
+    .mobile-logo
+        margin-right: auto
+        +res-bl(sm)
+            max-width: 150px
+    .collapse
+        +res-bl(lg)
+            overflow: auto
+    .navbar-collapse
+        padding: 0px
+        > ul
+            display: flex
+            +res-bl(lg)
+                display: block
+                padding: 25px 0
+                background: #FFFFFF
+                > li:last-child
+                    border-bottom: 1px solid #f3f3f3
+        +res-bl(lg)
+            left: 0
+            width: 100%
+            position: absolute
+            max-height: calc(100vh - 80px)
+        li
+            padding: 35px 16px
+            +flexcenter(space-between)
+            +res-bl(xxl)
+                +gapLR(padding, 10px)
+            +res-bl(lg)
+                display: block
+                padding: 0 15px
+                border-top: 1px solid #f3f3f3
+            &.dropdown .dropdown-btn
+                cursor: pointer
+                font-size: 12px
+                margin-left: 5px
+                color: $heading-color
+                +res-bl(lg)
+                    position: absolute
+                    right: 10px
+                    top: 0
+                    width: 50px
+                    height: 43px
+                    border-left: 1px solid #f2f2f2
+                    text-align: center
+                    line-height: 43px
+            a
+                display: block
+                opacity: 1
+                font-weight: 600
+                position: relative
+                color: $heading-color
+                font-family: $heading-font
+                text-transform: capitalize
+                transition: all 500ms ease
+                +res-ab(xs)
+                    font-size: 18px
+                +res-bl(lg)
+                    padding: 10px 10px
+                    line-height: 22px
+                &:hover
+                    color: $primary-color
+                    text-decoration: underline
+            &.current > a, &.current-menu-item > a
+                font-weight: 500
+            li
+                border-top: 1px solid #f3f3f3
+                a
+                    text-transform: capitalize
+                    &:before
+                        display: none
+            .megamenu
+                position: absolute
+                left: 0px
+                top: 100%
+                width: 100%
+                z-index: 100
+                display: none
+                padding: 20px 0
+                background: #ffffff
+                box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05), -2px 0px 5px 1px rgba(0, 0, 0, 0.05)
+                +clearfix
+                +res-bl(lg)
+                    position: relative
+                    box-shadow: none
+                    width: 100%
+                    .container
+                        max-width: 100%
+                    .row
+                        margin: 0px
+                ul
+                    display: block
+                    position: relative
+                    top: 0
+                    width: 100%
+                    box-shadow: none
+            ul
+                position: absolute
+                left: inherit
+                top: 100%
+                min-width: 250px
+                z-index: 100
+                display: none
+                background: #ffffff
+                box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.05), -2px 0px 5px 1px rgba(0, 0, 0, 0.05)
+                +res-bl(lg)
+                    position: relative
+                    display: none
+                    width: 100%
+                    box-shadow: none
+                    +clearfix
+                    +res-bl(xs)
+                        min-width: auto
+                li
+                    width: 100%
+                    padding: 7px 20px
+                    +res-bl(lg)
+                        padding: 0 15px
+                    ul
+                        left: 100%
+                        top: 0%
+                        +res-bl(lg)
+                            left: auto
+
+    .navbar-header
+        display: none
+        +res-bl(lg)
+            +flexcenter(start)
+        .navbar-toggle
+            float: right
+            padding: 4px 0
+            cursor: pointer
+            background: transparent
+            .icon-bar
+                background: $base-color
+                height: 2px
+                width: 30px
+                display: block
+                margin: 7px 0
+
+/* Menu Btns */
+.menu-btns
+    display: flex
+    align-items: center
+    .theme-btn
+        +gapTB(padding, 9px)
+        +res-bl(xl)
+            display: none
+        
+/* Header Search */
+.nav-search
+    position: relative
+    margin-right: 40px
+    margin-left: 25px
+    button
+        background: transparent
+    form
+        position: absolute
+        width: 320px
+        top: 100%
+        right: 0
+        z-index: 777
+        +flexcenter(center)
+        background-color: #fff
+        animation: fadeIn 0.5s
+        box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05)
+        +res-bl(xs)
+            width: 275px
+        &.hide
+            display: none
+        input
+            border: none
+            padding: 15px 5px 15px 25px
+        button
+            padding: 15px 20px 15px 0
+            
+/* Header Socila */
+.header-inner
+    .social-style-two
+        margin-left: 30px
+        +res-bl(xxl)
+            display: none
+    
+/* Menu Sidebar */
+.menu-sidebar
+    display: flex
+    +res-bt(sm, xl)
+        margin-left: 30px
+    button
+        width: 35px
+        display: flex
+        cursor: pointer
+        align-items: flex-end
+        flex-direction: column
+        background: transparent
+        .icon-bar
+            background: $heading-color
+            height: 2px
+            width: 100%
+            margin: 4px 0
+            display: block
+            transition: 0.5s
+            &:first-child
+                width: calc(100% - 5px)
+            &:last-child
+                width: calc(100% - 8px)
+        .toggle-btn
+            width: 25px
+            aspect-ratio: 1
+            --c: conic-gradient(from -90deg, #674df3 90deg, #0000 0)
+            background: var(--c), var(--c);
+            background-size: 40% 40%
+        &:hover
+            .icon-bar
+                width: 100%
+            .toggle-btn
+                animation: preloader 1s infinite alternate
+        
+/** hidden-sidebar *
+.hidden-bar
+    position: fixed
+    right: -350px
+    top: 0px
+    opacity: 0
+    width: 350px
+    height: 100%
+    z-index: 99999
+    overflow-y: auto
+    visibility: hidden
+    background-color: $heading-color
+    border-left: 1px solid #231b26
+    transition: all 0.5s ease
+    +res-bl(xs)
+        width: 300px
+    .social-style-one
+        a
+            +size(40px)
+            line-height: 40px
+
+.side-content-visible .hidden-bar
+    right: 0px
+    opacity: 1
+    visibility: visible
+
+.hidden-bar .inner-box
+    position: relative
+    padding: 100px 40px 50px
+    +res-bl(xs)
+        +gapLR(padding, 25px)
+    .cross-icon
+        position: absolute
+        right: 30px
+        top: 30px
+        cursor: pointer
+        color: #ffffff
+        font-size: 20px
+        transition: all 500ms ease
+    h4
+        position: relative
+        color: #ffffff
+        margin-bottom: 35px
+
+/*Appointment Form
+.hidden-bar .appointment-form
+    position: relative
+
+    .form-group
+        position: relative
+        margin-bottom: 20px
+
+    input
+        &[type="text"], &[type="email"]
+            position: relative
+            display: block
+            width: 100%
+            line-height: 23px
+            padding: 10px 25px
+            color: #ffffff
+            font-size: 16px
+            background: none
+            transition: all 300ms ease
+            border: 1px solid rgba(255, 255, 255, 0.1)
+
+    textarea
+        position: relative
+        display: block
+        width: 100%
+        line-height: 23px
+        padding: 10px 25px
+        color: #ffffff
+        font-size: 16px
+        border: 1px solid rgba(255, 255, 255, 0.1)
+        background: none
+        transition: all 300ms ease
+        resize: none
+
+    input::placeholder
+        font-size: 14px
+        color: #bdbdbd
+
+    textarea
+        &::placeholder
+            font-size: 14px
+            color: #bdbdbd
+
+    .form-group button
+        width: 100%
+        font-size: 16px
+        padding: 10px 15px
+        margin-bottom: 20px
+        border-color: white
+
+.form-back-drop
+    position: fixed
+    left: 100%
+    top: 0px
+    width: 100%
+    height: 100%
+    opacity: 0
+    background: rgba(0, 0, 0, 0.7)
+    visibility: hidden
+    z-index: 9990
+    transition: all 0.5s ease
+
+.side-content-visible .form-back-drop
+    opacity: 1
+    left: 0
+    visibility: visible
+    
+        
+/* Menu White */
+.main-header.menu-white
+    .nav-search > button
+        color: white
+    .main-menu .navigation > li > a,
+    .main-menu .navigation > .dropdown > .dropdown-btn
+        +res-ab(lg)
+            color: white
+    .main-menu .navigation li li a:hover
+        color: $primary-color
+    .menu-sidebar button .icon-bar,
+    .main-menu .navbar-toggle .icon-bar
+            background: white
+    .toggle-btn
+        --c: conic-gradient(from -90deg, white 90deg, #0000 0)
+        
+/* Header One */
+.main-header.header-one
+    .header-top
+        padding: 9px
+        +res-ab(lg)
+            margin-left: 155px
+        .for-none
+            +res-bl(lp)
+                display: none
+    .logo-outer
+        margin-top: -50px
+        margin-right: 25px
+        padding: 25px 30px
+        background: $secondary-color
+        clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%)
+    .main-menu
+        .navigation
+            > li
+                +res-ab(lg)
+                    +gapTB(padding, 26px)
+    .mobile-logo
+        padding: 10px 25px
+        background: $secondary-color
+        clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%)
+        img
+            max-height: 50px
+    .nav-search
+        +res-bl(xl)
+            margin-right: 0
+    &.fixed-header
+        .logo-outer
+            margin-top: 0
+            +gapTB(padding, 10px)
+            .logo
+                img
+                    max-height: 60px
+                    
+/* Header Two */
+.main-header.header-two
+    .main-menu .mobile-logo
+        +res-bl(xs)
+            max-width: 135px
+    .nav-search
+        +res-bl(xl)
+            margin-right: 0
+            
+/* Header Three */
+.main-header.header-three
+    &.fixed-header
+        .header-upper
+            background: $heading-color
+    .nav-search
+        +res-bt(sm, xl)
+            margin-right: 0
+        +res-bl(xs)
+            display: none
+    .menu-btns
+        +res-bl(xs)
+            margin-left: 25px
+            
+/* Header Four */
+.main-header.header-four
+    .main-menu .navbar-collapse > ul > li
+        +res-ab(lg)
+            +gapTB(padding, 25px)
+    .nav-search
+        +res-bt(sm, xl)
+            margin-right: 0
+        +res-bl(xs)
+            display: none
+    .menu-btns
+        +res-bl(xs)
+            margin-left: 25px
